@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür Snickeri</title>
+    <title>Jonas Thür | Specialsnickeri</title>
     <style>
-        /* SUPERENKEL DESIGN - INGET SOM KAN GÅ SÖNDER */
-        body {
-            background-color: white !important;
-            color: black !important;
-            font-family: sans-serif;
+        /* BASINSTÄLLNINGAR - Robust och snabb */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .wrapper {
-            padding: 40px 20px;
-            max-width: 600px;
-            margin: 0 auto;
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
-        h1 {
-            font-size: 48px;
+
+        /* TOPPSEKTION - Kraftfull och ren */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background: linear-gradient(to bottom, #111, #000);
+            border-bottom: 1px solid #222;
+        }
+
+        .label {
+            font-size: 10px;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            border-bottom: 5px solid black;
-        }
-        .yrke {
-            font-size: 20px;
-            margin-bottom: 40px;
-            font-weight: bold;
-        }
-        .box {
-            background: #f0f0f0;
-            padding: 20px;
+            letter-spacing: 5px;
+            color: #666;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
         }
-        .tel-knapp {
-            display: block;
-            background: black;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
+
+        h1 {
+            font-size: clamp(3rem, 12vw, 6rem);
+            font-weight: 900;
+            line-height: 0.85;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
         }
-        .karta-lank {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: black;
-            font-weight: bold;
+
+        .hero-line {
+            width: 100px;
+            height: 4px;
+            background-color: #ffffff;
+            margin-bottom: 30px;
         }
-    </style>
-</head>
-<body>
 
-    <div class="wrapper">
-        <h1>JONAS THÜR</h1>
-        <p class="yrke">Specialsnickeri & Inredning</p>
+        .sub-headline {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 500px;
+        }
 
-        <div class="box">
-            <h3>Våra Tjänster</h3>
-            <p>• Platsbyggda kök</p>
-            <p>• Möbelsnickeri</p>
-            <p>• Inredningslösningar</p>
-        </div>
+        /* TJÄNSTER - Arkitektonisk layout */
+        section {
+            padding: 100px 10%;
+        }
 
-        <div class="box">
-            <h3>Kontakt</h3>
-            <p>Ring oss direkt för en offert:</p>
-            <a href="tel:0706731330" class="tel-knapp">070-673 13 30</a>
-            
-            <a href="https://www.google.com/maps/search/Tulegatan+19+Stockholm" target="_blank" class="karta-lank">
-                Visa adress på karta (Tulegatan 19)
-            </a>
-        </div>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
 
-        <p style="text-align:center; color: #888; font-size: 12px; margin-top: 50px;">
-            © 2026 Jonas Thür Specialsnickeri Stockholm
-        </p>
-    </div>
+        .service-card {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+        }
 
-</body>
-</html>
+        .service-card h3 {
