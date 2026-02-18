@@ -3,173 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Första GitHub + Vercel Site</title>
+    <title>Jonas Thür Specialsnickerier | Mästarklass i trä</title>
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent: #d4a373; /* En snygg trä-inspirerad guld/brun färg */
+            --dark: #1a1a1a;
+            --light: #fefae0;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--primary-gradient);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            text-align: center;
-            max-width: 800px;
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem); /* Skalar texten mjukt mellan mobil och desktop */
-            margin-bottom: 15px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            letter-spacing: -1px;
-        }
-        
-        .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
-        .success-badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 30px 0;
-        }
-        
-        .badge {
-            background: var(--glass-bg);
-            -webkit-backdrop-filter: blur(10px); /* Stöd för Safari */
-            backdrop-filter: blur(10px);
-            padding: 12px 24px;
-            border-radius: 100px;
-            font-size: 0.95em;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: default;
-        }
-        
-        .badge:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        
-        .info-box {
-            background: var(--glass-bg);
-            -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-            border-radius: 24px;
-            padding: 40px;
-            margin-top: 20px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            font-family: 'Segoe UI', Roboto, sans-serif;
         }
 
-        .info-box:hover {
-            transform: translateY(-5px);
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
         }
-        
-        .info-box h2 {
-            margin-bottom: 15px;
-            font-size: 2em;
+
+        /* Header / Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1581291417004-73f8269f000c?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
         }
-        
-        .info-box p {
-            font-size: 1.1em;
-            line-height: 1.7;
-            opacity: 0.95;
-            max-width: 600px;
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        /* Portfolio Galleri */
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        
-        .tech-stack {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--accent);
         }
-        
-        .tech-item {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 8px 16px;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #252525;
             border-radius: 8px;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: transform 0.3s;
         }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .card:hover {
+            transform: translateY(-10px);
         }
-        
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        /* Kontakt-del */
+        .contact-box {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: opacity 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
         @media (max-width: 600px) {
-            .info-box {
-                padding: 25px;
-            }
-            .badge {
-                width: 100%; /* Badges tar hela bredden på små mobiler för bättre läsbarhet */
-            }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 Det fungerar!</h1>
-        <p class="subtitle">Min resa mot modern webbutveckling</p>
-        
-        <div class="success-badges">
-            <div class="badge">✅ Git installerat</div>
-            <div class="badge">✅ Repo skapat</div>
-            <div class="badge">✅ Fil uppladdad</div>
-            <div class="badge">✅ Vercel Live</div>
-        </div>
-        
-        <div class="info-box">
-            <h2>🎉 Grattis!</h2>
-            <p>
-                Du har precis deployat din första hemsida med GitHub och Vercel. 
-                Varje gång du sparar ändringar och "pushar" dem, kommer internet 
-                att uppdateras automatiskt. Snyggt jobbat!
-            </p>
-            
-            <div class="tech-stack">
-                <div class="tech-item">HTML5</div>
-                <div class="tech-item">CSS3</div>
-                <div class="tech-item">Git</div>
-                <div class="tech-item">Vercel</div>
+
+    <header>
+        <div class="subtitle">Hantverk med precision</div>
+        <h1>Jonas Thür</h1>
+        <p>Specialsnickerier & Unika Trälösningar</p>
+        <a href="#kontakt" class="btn">Boka Konsultation</a>
+    </header>
+
+    <section class="section">
+        <h2>Våra Tjänster</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1556911223-04700e27a4a2?auto=format&fit=crop&w=600&q=80" alt="Kök">
+                <div class="card-content">
+                    <h3>Platsbyggda Kök</h3>
+                    <p>Skräddarsydda lösningar helt efter dina mått och önskemål.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&w=600&q=80" alt="Möbler">
+                <div class="card-content">
+                    <h3>Unika Möbler</h3>
+                    <p>Från matbord till bokhyllor – hantverk som håller i generationer.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505798577917-a65157d3320a?auto=format&fit=crop&w=600&q=80" alt="Detaljer">
+                <div class="card-content">
+                    <h3>Specialsnickerier</h3>
+                    <p>Trappor, dörrar och lister med historisk precision.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section" id="kontakt">
+        <div class="contact-box">
+            <h2>Vill du förverkliga din idé?</h2>
+            <p>Kontakta Jonas Thür för ett möte om ditt nästa projekt.</p>
+            <p style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Ring: [HÄR KAN DU SKRIVA HANS NUMMER]</p>
+            <a href="mailto:exempel@mail.se" class="btn">Skicka E-post</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Jonas Thür Specialsnickerier. Designad av [DITT NAMN].
+    </footer>
+
 </body>
 </html>
