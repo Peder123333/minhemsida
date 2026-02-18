@@ -1,124 +1,74 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür | Specialsnickeri Stockholm</title>
+    <title>Jonas Thür Specialsnickeri</title>
     <style>
-        /* KLASSISK FÄRGPALETT */
-        :root {
-            --bakgrund: #ffffff;
-            --text-huvud: #1a1a1a;
-            --text-mjuk: #666666;
-            --accent: #000000;
-            --ljus-gra: #f9f9f9;
-        }
-
-        * {
+        body {
+            background-color: #f0f0f0; /* Ljusgrå bakgrund så du ser att den inte är vit */
+            color: #1a1a1a;
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', serif; /* Ger en klassisk hantverkskänsla */
         }
-
-        body {
-            background-color: var(--bakgrund);
-            color: var(--text-huvud);
-            line-height: 1.8;
+        .container {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        /* NAVIGATION */
-        nav {
-            padding: 30px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: var(--accent);
-        }
-
-        /* HERO */
-        header {
-            padding: 100px 10%;
-            background-color: var(--bakgrund);
-            max-width: 1000px;
-        }
-
         h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 30px;
-            font-weight: normal;
+            font-size: 40px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
         }
-
-        .intro-text {
-            font-size: 1.2rem;
-            color: var(--text-mjuk);
-            max-width: 600px;
-            margin-bottom: 40px;
+        .sektion {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 30px;
+            border: 1px solid #ddd;
         }
-
-        /* SEKTIONER */
-        section {
-            padding: 80px 10%;
+        .telefon {
+            display: block;
+            font-size: 30px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            background: #eee;
+            padding: 15px;
+            text-align: center;
         }
-
-        .gra-sektion {
-            background-color: var(--ljus-gra);
-        }
-
-        h2 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            color: var(--text-mjuk);
-        }
-
-        /* TJÄNSTER / PORTFOLIO */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .box {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 30px;
-        }
-
-        .placeholder-box {
+        .karta {
             width: 100%;
             height: 300px;
-            background-color: #eee;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-style: italic;
+            background: #ccc;
+            border: none;
         }
+    </style>
+</head>
+<body>
 
-        /* KONTAKT */
-        .tel-lank {
-            font-size: clamp(1.5rem, 5vw, 3rem);
-            color: var(--accent);
-            text-decoration: none;
-            display: block;
-            margin: 20px 0;
-            border-bottom: 2px solid var(--accent);
-            width: fit-content;
-        }
+    <div class="container">
+        <h1>Jonas Thür</h1>
+        <p>Specialsnickeri & Inredning i Stockholm</p>
 
-        /* KARTA */
-        .map-container {
-            width: 100%;
-            height: 450px;
-            background
+        <div class="sektion">
+            <h2>Om oss</h2>
+            <p>Vi skapar platsbyggda kök och unika möbler med fokus på kvalitet och hantverk.</p>
+        </div>
+
+        <div class="sektion">
+            <h2>Kontakt</h2>
+            <p>Klicka på numret för att ringa oss:</p>
+            <a href="tel:0706731330" class="telefon">070-673 13 30</a>
+            <p>E-post: info@jonasthur.se</p>
+        </div>
+
+        <div class="sektion">
+            <h2>Här finns vi</h2>
+            <iframe class="karta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.463371404179!2d18.0610344!3d59.341991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d682496d03b%3A0xc39281a17c2f6050!2sTulegatan%2019%2C%20113%2053%20Stockholm!5e0!3m2!1ssv!2sse!4v1700000000000"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
