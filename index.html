@@ -3,134 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür | Mästarklass Specialsnickeri</title>
-    
-    <meta name="description" content="Exklusiva platsbyggda kök och specialsnickerier i Stockholm. Jonas Thür förenar traditionellt hantverk med modern design.">
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>">
-
+    <title>Jonas Thür | Specialsnickeri</title>
     <style>
+        /* FÄRGER */
         :root {
-            --primary-orange: #e67e22; 
-            --deep-black: #0a0a0a;
-            --dark-grey: #161616;
-            --text-muted: #a0a0a0;
-            --text-light: #f5f5f5;
-        }
-
-        /* Mjuk animations-effekt */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            --orange: #e67e22;
+            --svart: #1a1a1a;
+            --morkgrå: #252525;
+            --vit: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: var(--deep-black);
-            color: var(--text-light);
+            background-color: var(--svart);
+            color: var(--vit);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Navigering */
+        /* NAVBAR */
         nav {
-            padding: 30px 5%;
+            background: #000;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            width: 100%;
-            z-index: 1000;
+            border-bottom: 2px solid var(--orange);
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--white);
+            color: var(--orange);
+            font-weight: bold;
             text-decoration: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
             letter-spacing: 2px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover { color: var(--primary-orange); }
-
-        /* Hero Section */
+        /* HERO (TOPPEN PÅ SIDAN) */
         header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 100px 20px;
             text-align: center;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        header p {
-            color: var(--primary-orange);
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
         }
 
         h1 {
-            font-size: clamp(3rem, 12vw, 7rem);
-            font-weight: 800;
-            line-height: 0.9;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: var(--orange);
+        }
+
+        .underrubrik {
+            color: #ccc;
             margin-bottom: 30px;
-            letter-spacing: -2px;
         }
 
-        .hero-subtext {
-            max-width: 500px;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+        /* KNAPP */
+        .btn {
+            background: var(--orange);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 5px;
         }
 
-        /* Sektioner */
-        .section {
-            padding: 120px 10%;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* SEKTIONER */
+        section {
+            padding: 60px 10%;
+        }
+
+        .grå-sektion {
+            background-color: var(--morkgrå);
         }
 
         h2 {
-            font-size: 0.8rem;
+            color: var(--orange);
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            color: var(--primary-orange);
-            margin-bottom: 40px;
         }
 
-        /* Tjänster Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
+        /* KORT / TJÄNSTER */
+        .kort {
+            background: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--orange);
         }
 
-        .card {
-            background: var(--dark-grey);
-            padding: 40px;
-            transition: 0.4s;
-            border: 1px solid #222;
+        .bild-plats {
+            width: 100%;
+            height: 200px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: #444;
+            border: 1px solid #444;
         }
 
-        .card:hover
+        /* KONTAKT */
+        .tel-lank {
+            font-size: 2rem;
+            color: var(--vit);
