@@ -1,193 +1,206 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür | Mästarklass Specialsnickeri</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonas Thür | Specialsnickeri</title>
 
-        body {
-            background-color: #1a1a1a; /* Mörkgrå, inte svart */
-            color: #e0e0e0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-        }
+<style>
+:root {
+    --dark: #1a1a1a;
+    --dark-2: #222;
+    --gray: #888;
+    --light: #ffffff;
+}
 
-        /* Bakgrundstext som ger karaktär */
-        .bg-text {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20vw;
-            font-weight: 900;
-            color: #222;
-            z-index: -1;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-        }
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--dark);
+    color: #e0e0e0;
+    line-height: 1.6;
+}
 
-        .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #888;
-            margin-bottom: 20px;
-        }
+/* Bakgrundstext */
+.bg-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18vw;
+    font-weight: 900;
+    color: #222;
+    z-index: -1;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
 
-        h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.9;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 40px;
-            color: #fff;
-        }
+/* Hero */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+}
 
-        .line {
-            width: 150px;
-            height: 2px;
-            background-color: #fff;
-            margin-bottom: 40px;
-        }
+.label {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
 
-        section {
-            padding: 100px 10%;
-        }
+h1 {
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--light);
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2px;
-            background-color: #333; /* Skapar linjer mellan korten */
-        }
+.line {
+    width: 140px;
+    height: 2px;
+    background: var(--light);
+    margin-bottom: 40px;
+}
 
-        .service-card {
-            background-color: #1a1a1a;
-            padding: 60px 40px;
-            transition: 0.3s;
-        }
+.intro-text {
+    max-width: 500px;
+    font-size: 1.1rem;
+    color: var(--gray);
+}
 
-        .service-card:hover {
-            background-color: #222;
-        }
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    background: #333;
+}
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+.service-card {
+    background: var(--dark);
+    padding: 70px 40px;
+    transition: background 0.3s ease;
+}
 
-        .service-card p {
-            color: #888;
-        }
+.service-card:hover {
+    background: var(--dark-2);
+}
 
-        /* Kontakt-del som känns lyxig */
-        .contact-section {
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-            padding: 150px 10%;
-        }
+.service-card h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
 
-        .contact-section h2 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 50px;
-        }
+.service-card p {
+    color: var(--gray);
+}
 
-        .tel-link {
-            font-size: clamp(2rem, 8vw, 5rem);
-            color: #000;
-            text-decoration: none;
-            font-weight: 900;
-            display: block;
-            line-height: 1;
-            transition: 0.2s;
-        }
+/* Contact */
+.contact-section {
+    background: var(--light);
+    color: #000;
+    text-align: center;
+    padding: 150px 10%;
+}
 
-        .tel-link:hover {
-            opacity: 0.6;
-        }
+.contact-section h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+}
 
-        .map-box {
-            width: 100%;
-            height: 500px;
-            background: #000;
-        }
+.tel-link {
+    display: block;
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-weight: 900;
+    text-decoration: none;
+    color: #000;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+}
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: grayscale(1) invert(0.9);
-        }
+.tel-link:hover {
+    opacity: 0.6;
+}
 
-        footer {
-            padding: 50px 10%;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #555;
-            display: flex;
-            justify-content: space-between;
-        }
+.email {
+    margin-top: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-    </style>
+/* Map */
+.map-box {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(1) contrast(1.1);
+}
+
+/* Footer */
+footer {
+    padding: 50px 10%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="bg-text">EST 1994</div>
+<div class="bg-text">EST 1994</div>
 
-    <header>
-        <p class="label">Specialsnickeri • Stockholm</p>
-        <h1>JONAS<br>THÜR</h1>
-        <div class="line"></div>
-        <p style="max-width: 500px; font-size: 1.1rem; color: #888;">
-            Vi skapar arkitektoniska lösningar i trä där precision möter passion. Inget projekt är för komplext.
-        </p>
-    </header>
+<header>
+    <p class="label">Specialsnickeri • Stockholm</p>
+    <h1>Jonas<br>Thür</h1>
+    <div class="line"></div>
+    <p class="intro-text">
+        Vi skapar arkitektoniska lösningar i trä där precision möter passion.
+        Inget projekt är för komplext.
+    </p>
+</header>
 
-    <div class="services">
-        <div class="service-card">
-            <h3>Platsbyggt</h3>
-            <p>Kök, bibliotek och garderober skapade för att bli en del av husets själ.</p>
-        </div>
-        <div class="service-card">
-            <h3>Möbelkonst</h3>
-            <p>Unika objekt tillverkade för hand i verkstaden på Tulegatan.</p>
-        </div>
-    </div>
+<section class="services">
+    <article class="service-card">
+        <h3>Platsbyggt</h3>
+        <p>Kök, bibliotek och garderober skapade för att bli en del av husets själ.</p>
+    </article>
 
-    <section class="contact-section">
-        <h2>Boka ett möte</h2>
-        <a href="tel:0706731330" class="tel-link">070-673 13 30</a>
-        <p style="margin-top: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">info@jonasthur.se</p>
-    </section>
+    <article class="service-card">
+        <h3>Möbelkonst</h3>
+        <p>Unika objekt tillverkade för hand i verkstaden på Tulegatan.</p>
+    </article>
+</section>
 
-    <div class="map-box">
-        <iframe src="http://googleusercontent.com/maps.google.com/9"></iframe>
-    </div>
+<section class="contact-section">
+    <h2>Boka ett möte</h2>
+    <a href="tel:0706731330" class="tel-link">070-673 13 30</a>
+    <p class="email">info@jonasthur.se</p>
+</section>
 
-    <footer>
-        <p>© 2026 J. THÜR</p>
-        <p>Stockholm, Sverige</p>
-    </footer>
-
-</body>
-</html>
+<div class="map-box">
+    <!-- Fungerande Google Maps embed utan API -->
