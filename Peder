@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Första GitHub + Vercel Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .success-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 40px 0;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .info-box h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .info-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.3em;
+            }
+            
+            .badge {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Det Fungerar!</h1>
+        <p class="subtitle">Min första GitHub + Vercel hemsida</p>
+        
+        <div class="success-badges">
+            <div class="badge">✅ Git installerat</div>
+            <div class="badge">✅ GitHub repo skapat</div>
+            <div class="badge">✅ Fil uppladdat</div>
+            <div class="badge">✅ Vercel auto-deploy</div>
+        </div>
+        
+        <div class="info-box">
+            <h2>🎉 Grattis!</h2>
+            <p>
+                Du har precis deployat din första hemsida med GitHub och Vercel!
+                Nu kan du ändra denna fil, pusha till GitHub, och se den automatiskt
+                uppdateras på Vercel. Välkommen till modern webbutveckling!
+            </p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">GitHub</div>
+                <div class="tech-item">Vercel</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
