@@ -3,226 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür Specialsnickerier | Mästarklass</title>
+    <title>Jonas Thür | Mästarklass Specialsnickeri</title>
+    
+    <meta name="description" content="Exklusiva platsbyggda kök och specialsnickerier i Stockholm. Jonas Thür förenar traditionellt hantverk med modern design.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪵</text></svg>">
+
     <style>
         :root {
-            --primary-orange: #e67e22; /* Klassisk snickar-orange */
-            --deep-black: #121212;
-            --dark-grey: #1e1e1e;
-            --text-light: #ecf0f1;
-            --white: #ffffff;
+            --primary-orange: #e67e22; 
+            --deep-black: #0a0a0a;
+            --dark-grey: #161616;
+            --text-muted: #a0a0a0;
+            --text-light: #f5f5f5;
+        }
+
+        /* Mjuk animations-effekt */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Georgia', serif; /* Mer klassisk font för hantverk */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--deep-black);
             color: var(--text-light);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         /* Navigering */
         nav {
-            background: var(--deep-black);
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            padding: 30px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--primary-orange);
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
         }
 
         .logo {
-            font-weight: bold;
-            font-size: 1.4rem;
-            color: var(--primary-orange);
-            letter-spacing: 2px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--white);
+            text-decoration: none;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
+            margin-left: 30px;
+            font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        /* Hero Section (UTAN BILD) */
+        .nav-links a:hover { color: var(--primary-orange); }
+
+        /* Hero Section */
         header {
-            height: 80vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: var(--deep-black);
-            border-bottom: 1px solid #333;
-            padding: 20px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header p {
+            color: var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            color: var(--white);
-            margin-bottom: 10px;
+            font-size: clamp(3rem, 12vw, 7rem);
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
         }
 
-        .hero-line {
-            width: 100px;
-            height: 3px;
-            background: var(--primary-orange);
-            margin: 20px 0;
-        }
-
-        /* Bild-placeholder-stil */
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background: #2c3e50;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #7f8c8d;
-            border: 1px dashed var(--primary-orange);
-            font-style: italic;
-            margin-bottom: 15px;
+        .hero-subtext {
+            max-width: 500px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
 
         /* Sektioner */
         .section {
-            padding: 80px 10%;
+            padding: 120px 10%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
+        h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--primary-orange);
+            margin-bottom: 40px;
+        }
+
+        /* Tjänster Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
         }
 
         .card {
             background: var(--dark-grey);
-            padding: 20px;
-            border-bottom: 3px solid var(--primary-orange);
-        }
-
-        h2 { font-size: 2.5rem; color: var(--primary-orange); }
-        h3 { margin-bottom: 15px; color: var(--white); }
-
-        /* Karta-styling */
-        .map-section {
-            width: 100%;
-            height: 400px;
-            filter: grayscale(1) invert(0.9) contrast(1.2); /* Gör kartan mörk och proffsig */
-            border-top: 1px solid var(--primary-orange);
-            border-bottom: 1px solid var(--primary-orange);
-            margin-top: 40px;
-        }
-
-        .map-section iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Knapp */
-        .btn {
-            padding: 15px 40px;
-            background: var(--primary-orange);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--white);
-            color: var(--deep-black);
-        }
-
-        footer {
-            text-align: center;
             padding: 40px;
-            border-top: 1px solid #333;
-            font-size: 0.8rem;
+            transition: 0.4s;
+            border: 1px solid #222;
         }
-    </style>
-</head>
-<body>
 
-    <nav>
-        <div class="logo">J. THÜR</div>
-        <div class="nav-links">
-            <a href="#om">Om oss</a>
-            <a href="#tjanster">Tjänster</a>
-            <a href="#kontakt">Kontakt</a>
-        </div>
-    </nav>
-
-    <header>
-        <p style="text-transform: uppercase; letter-spacing: 5px;">Mästarklass i trä</p>
-        <h1>JONAS THÜR</h1>
-        <div class="hero-line"></div>
-        <p style="max-width: 600px; margin-bottom: 30px;">Specialsnickerier och unika lösningar för krävande miljöer. Från idé till färdigt hantverk.</p>
-        <a href="#kontakt" class="btn">Boka möte</a>
-    </header>
-
-    <section id="om" class="section">
-        <h2>Om oss</h2>
-        <p style="font-size: 1.2rem; margin-top: 20px;">
-            Jonas Thür Specialsnickerier står för en tidlös tradition där kvaliteten alltid kommer först. 
-            Varje projekt hanteras med största precision och respekt för materialet. 
-            Vi arbetar med allt från exklusiva kök till platsbyggda inredningar i Stockholm.
-        </p>
-    </section>
-
-    <section id="tjanster" class="section" style="background-color: var(--dark-grey);">
-        <h2>Tjänster</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="image-placeholder">Bild på platsbyggt kök</div>
-                <h3>Platsbyggda Kök</h3>
-                <p>Vi skapar kök som är anpassade efter ditt rums exakta mått och din personliga stil.</p>
-            </div>
-            <div class="card">
-                <div class="image-placeholder">Bild på specialsnickeri</div>
-                <h3>Unika Möbler</h3>
-                <p>Design och tillverkning av matsalsbord, bokhyllor och andra unika inredningsdetaljer.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="kontakt" class="section" style="text-align: center;">
-        <h2>Kontakt</h2>
-        <p style="margin: 20px 0 40px;">Hör av dig för att diskutera ditt nästa projekt.</p>
-        <div style="border: 1px solid var(--primary-orange); padding: 40px; display: inline-block;">
-            <p>Telefon: 08-XXX XX XX</p>
-            <p>E-post: info@jonasthur.se</p>
-            <p style="margin-top: 20px;">Verkstad: Stockholm</p>
-        </div>
-    </section>
-
-    <section class="map-section">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10170.834710173669!2d18.0685808!3d59.3293235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f76311900f3c7%3A0x91d374429150744!2sStockholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Jonas Thür Specialsnickerier. Designad av [Ditt Namn].</p>
-    </footer>
-
-</body>
-</html>
+        .card:hover
