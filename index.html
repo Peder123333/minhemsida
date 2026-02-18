@@ -3,180 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Thür Specialsnickerier | Mästarklass i trä</title>
+    <title>Jonas Thür Specialsnickerier | Professionellt Hantverk</title>
     <style>
         :root {
-            --accent: #d4a373; /* En snygg trä-inspirerad guld/brun färg */
-            --dark: #1a1a1a;
-            --light: #fefae0;
+            --primary: #2d6a4f;
+            --secondary: #40916c;
+            --light: #d8f3dc;
+            --dark-bg: #081c15;
+            --card-bg: #1b4332;
+            --white: #f7fff7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            background-color: var(--dark);
-            color: var(--light);
+            background-color: var(--dark-bg);
+            color: var(--white);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Header / Hero Section */
+        /* Navigering */
+        nav {
+            background: rgba(8, 28, 21, 0.95);
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--primary);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--light); }
+
+        /* Hero Section */
         header {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1581291417004-73f8269f000c?auto=format&fit=crop&w=1600&q=80');
+                        url('https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=1600');
             background-size: cover;
             background-position: center;
             padding: 20px;
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 1rem; }
+        .hero-p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; color: var(--light); }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 30px;
-        }
+        /* Sektioner */
+        .section { padding: 100px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--light); margin-bottom: 10px; }
+        .underline { width: 60px; height: 4px; background: var(--primary); margin: 0 auto; }
 
-        /* Portfolio Galleri */
-        .section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--accent);
-        }
-
-        .grid {
+        /* Om Oss */
+        .about-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 50px;
+            align-items: center;
         }
 
-        .card {
-            background: #252525;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #333;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
+        .about-img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid var(--primary);
         }
 
-        .card-content {
-            padding: 20px;
+        /* Tjänster Ikon-grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        /* Kontakt-del */
-        .contact-box {
-            background: var(--accent);
-            color: var(--dark);
+        .service-card {
+            background: var(--card-bg);
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 10px;
             text-align: center;
-            margin-top: 50px;
+            transition: 0.3s;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--dark);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: opacity 0.3s;
+        .service-card:hover { background: var(--primary); transform: translateY(-5px); }
+        .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+
+        /* Kontakt */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
+
+        .contact-info {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .info-item { margin-bottom: 20px; }
+        .info-item h4 { color: var(--light); margin-bottom: 5px; }
+
+        /* Knappar */
+        .btn {
+            padding: 15px 35px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover { background: var(--secondary); }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
+            padding: 50px;
+            border-top: 1px solid #111;
+            font-size: 0.8rem;
             opacity: 0.6;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Enkelt för mobilen */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="subtitle">Hantverk med precision</div>
-        <h1>Jonas Thür</h1>
-        <p>Specialsnickerier & Unika Trälösningar</p>
-        <a href="#kontakt" class="btn">Boka Konsultation</a>
+    <nav>
+        <div class="logo">J. THÜR SNICKERI</div>
+        <div class="nav-links">
+            <a href="#hem">Hem</a>
+            <a href="#om-oss">Om oss</a>
+            <a href="#tjanster">Tjänster</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </nav>
+
+    <header id="hem">
+        <h1>Mästarklass i Trä</h1>
+        <p class="hero-p">Vi förvandlar dina visioner till verklighet med stockholms främsta specialsnickerier.</p>
+        <a href="#kontakt" class="btn">KONTAKTA OSS</a>
     </header>
 
-    <section class="section">
-        <h2>Våra Tjänster</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556911223-04700e27a4a2?auto=format&fit=crop&w=600&q=80" alt="Kök">
-                <div class="card-content">
-                    <h3>Platsbyggda Kök</h3>
-                    <p>Skräddarsydda lösningar helt efter dina mått och önskemål.</p>
-                </div>
+    <section id="om-oss" class="section">
+        <div class="about-container">
+            <div>
+                <img src="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=800" class="about-img" alt="Hantverk">
             </div>
-            <div class="card">
-    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80" alt="Exklusivt platsbyggt kök">
-    <div class="card-content">
-        <h3>Platsbyggda Kök</h3>
-        <p>Skräddarsydda lösningar helt efter dina mått och önskemål.</p>
-    </div>
-</div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1505798577917-a65157d3320a?auto=format&fit=crop&w=600&q=80" alt="Detaljer">
-                <div class="card-content">
-                    <h3>Specialsnickerier</h3>
-                    <p>Trappor, dörrar och lister med historisk precision.</p>
-                </div>
+            <div>
+                <h2 style="color: var(--light); margin-bottom: 20px;">Över 20 år i branschen</h2>
+                <p>Jonas Thür Specialsnickerier startades med en vision om att bevara det klassiska hantverket i en modern tid. Vi specialiserar oss på lösningar där standardmått inte räcker till.</p>
+                <br>
+                <p>Oavsett om det gäller en platsbyggd bokhylla i en sekelskifteslägenhet eller moderna kontorslösningar, levererar vi med precision och stolthet.</p>
+                <br>
+                <a href="#tjanster" class="btn" style="background: transparent; border: 1px solid var(--primary);">LÄS MER</a>
             </div>
         </div>
     </section>
 
-    <section class="section" id="kontakt">
-        <div class="contact-box">
-            <h2>Vill du förverkliga din idé?</h2>
-            <p>Kontakta Jonas Thür för ett möte om ditt nästa projekt.</p>
-            <p style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Ring:073 150 60 75</p>
-            <a href="mailto:exempel@mail.se" class="btn">Skicka E-post</a>
+    <section id="tjanster" class="section" style="background: #061611;">
+        <div class="section-title">
+            <h2>Våra Tjänster</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="icon">🪚</span>
+                <h3>Specialsnickeri</h3>
+                <p>Unika möbler och inredningsdetaljer helt efter dina önskemål.</p>
+            </div>
+            <div class="service-card">
+                <span class="icon">🏠</span>
+                <h3>Platsbyggt</h3>
+                <p>Garderobslösningar och kök som maximerar din yta perfekt.</p>
+            </div>
+            <div class="service-card">
+                <span class="icon">🪵</span>
+                <h3>Restaurering</h3>
+                <p>Vi ger nytt liv åt gamla trädetaljer och antikviteter.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="section">
+        <div class="section-title">
+            <h2>Kontakta Oss</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h4>Adress</h4>
+                    <p>Snickerivägen 12, Stockholm</p>
+                </div>
+                <div class="info-item">
+                    <h4>Telefon</h4>
+                    <p>08-XXX XX XX</p>
+                </div>
+                <div class="info-item">
+                    <h4>E-post</h4>
+                    <p>info@jonasthur.se</p>
+                </div>
+            </div>
+            <div class="contact-info" style="background: var(--primary);">
+                <h3>Snabboffert?</h3>
+                <p>Beskriv ditt projekt kort så återkommer vi med ett prisförslag inom 24 timmar.</p>
+                <br>
+                <a href="mailto:info@jonasthur.se" class="btn" style="background: var(--dark-bg);">SKICKA MAIL NU</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Jonas Thür Specialsnickerier. Designad av [DITT NAMN].
+        <p>&copy; 2026 Jonas Thür Specialsnickerier AB. Alla rättigheter reserverade.</p>
+        <p>Byggd av [Ditt Namn] - Webbutveckling för hantverkare.</p>
     </footer>
 
 </body>
