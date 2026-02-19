@@ -1,230 +1,240 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotorget Massage - Traditionell Thaimassage i Stockholm</title>
-    <meta name="description" content="Hotorget Massage - Professionell thaimassage i Stockholm. Öppet till 20:00 vardagar. Boka din massage idag!">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --primary: #8B4513;
-            --secondary: #D4A574;
-            --dark: #2C1810;
-            --light: #F5F0E8;
-            --text: #4A4A4A;
-            --green: #2D5016;
-        }
-        
-        body { font-family: 'Open Sans', sans-serif; line-height: 1.7; color: var(--text); }
-        h1, h2, h3 { font-family: 'Lora', serif; color: var(--dark); }
-        
-        header { background: white; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-bottom: 2px solid var(--secondary); }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
-        .logo { font-family: 'Lora', serif; font-size: 1.7em; font-weight: 600; color: var(--primary); }
-        
-        .hero { background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(139, 69, 19, 0.85)); color: white; padding: 180px 30px 120px; text-align: center; margin-top: 75px; }
-        .hero h1 { font-size: 3.5em; margin-bottom: 20px; color: white; }
-        .hero-subtitle { font-size: 1.3em; margin-bottom: 15px; }
-        
-        .cta-button { display: inline-block; background: var(--secondary); color: white; padding: 16px 40px; text-decoration: none; font-weight: 600; border: 2px solid var(--secondary); transition: all 0.3s; cursor: pointer; }
-        .cta-button:hover { background: transparent; }
-        
-        .services { padding: 100px 30px; max-width: 1200px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
-        .service-card { background: var(--light); padding: 40px 30px; text-align: center; }
-        .service-price { font-size: 2em; font-weight: 600; color: var(--primary); margin: 20px 0; }
-        
-        .reviews { background: var(--light); padding: 100px 30px; }
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 60px auto 0; }
-        .review-card { background: white; padding: 35px; }
-        .stars { color: #FFB800; font-size: 1.2em; }
-        
-        .section-title { font-size: 2.8em; text-align: center; margin-bottom: 20px; }
-        .divider { width: 80px; height: 3px; background: var(--secondary); margin: 20px auto 40px; }
-        
-        .contact { background: var(--dark); color: white; padding: 100px 30px; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1200px; margin: 60px auto 0; text-align: center; }
-        
-        .map-section iframe { width: 100%; height: 450px; border: none; }
-        footer { background: #1a0f08; color: rgba(255,255,255,0.7); text-align: center; padding: 30px; }
-        
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-        .modal.active { display: flex; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 50px; max-width: 500px; width: 90%; position: relative; }
-        .close-modal { position: absolute; top: 20px; right: 25px; font-size: 2em; background: none; border: none; cursor: pointer; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2em; }
-            .services-grid, .reviews-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hötorgets Massage | Professionell Massage i Stockholm</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background:#f4f1ea;
+    color:#1c1c1c;
+    line-height:1.6;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    position:sticky;
+    top:0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:100;
+}
+
+nav h1{
+    font-size:1.2rem;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1c1c1c;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:0 10%;
+}
+
+.hero h2{
+    font-size:clamp(2rem,5vw,3.5rem);
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 40px auto;
+    font-weight:300;
+}
+
+.cta{
+    background:#1f3a34;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.cta:hover{
+    background:#162824;
+}
+
+/* SECTION */
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h4{
+    margin-bottom:15px;
+}
+
+.price{
+    margin-top:20px;
+    font-weight:600;
+    color:#1f3a34;
+}
+
+/* CONTACT */
+.contact{
+    background:#1f3a34;
+    color:white;
+    text-align:center;
+    padding:120px 8%;
+}
+
+.contact h3{
+    margin-bottom:30px;
+}
+
+.phone{
+    font-size:clamp(2rem,5vw,3rem);
+    text-decoration:none;
+    color:white;
+    font-weight:700;
+}
+
+.phone:hover{
+    opacity:0.7;
+}
+
+/* MAP */
+.map{
+    height:450px;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    filter:grayscale(1);
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#aaa;
+    padding:40px 8%;
+    text-align:center;
+    font-size:0.9rem;
+}
+</style>
 </head>
+
 <body>
-    <div class="modal" id="bookingModal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeBookingModal()">&times;</button>
-            <h2>Boka Din Massage</h2>
-            <p style="margin: 25px 0;">Ring oss eller kom förbi:</p>
-            <p style="font-size: 1.3em; color: var(--primary); margin: 20px 0;"><strong>📞 070-093 93 59</strong></p>
-            <p>Drop-in välkomnas! Vi ser fram emot ditt besök.</p>
-        </div>
+
+<nav>
+    <h1>Hötorgets Massage</h1>
+    <a href="tel:0700000000">Boka: 070-000 00 00</a>
+</nav>
+
+<section class="hero">
+    <div>
+        <h2>Professionell Massage i Stockholm</h2>
+        <p>Djupgående behandlingar för avspänning, smärtlindring och återhämtning. Centralt vid Hötorget.</p>
+        <a href="tel:0700000000" class="cta">Boka tid</a>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h3>Våra Behandlingar</h3>
+        <p>Utvalda behandlingar anpassade efter dina behov</p>
     </div>
 
-    <header>
-        <nav>
-            <div class="logo">Hotorget Massage</div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Hotorget Massage</h1>
-        <p class="hero-subtitle">Traditionell Thaimassage & Avslappning</p>
-        <p style="margin-bottom: 40px;">📍 Apelbergsgatan 59, Stockholm</p>
-        <button class="cta-button" onclick="openBookingModal()">Boka Nu</button>
-        <a href="tel:0700939359" class="cta-button" style="margin-left: 15px; background: transparent; border-color: white; color: white;">070-093 93 59</a>
-    </section>
-
-    <section class="services">
-        <h2 class="section-title">Våra Behandlingar</h2>
-        <div class="divider"></div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Thaimassage 30 min</h3>
-                <div class="service-price">500 kr</div>
-                <p>Traditionell thaimassage med tryckpunkter och stretching.</p>
-                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
-            </div>
-            <div class="service-card">
-                <h3>Thaimassage 60 min</h3>
-                <div class="service-price">700 kr</div>
-                <p>Fullständig helkroppsbehandling för djup avslappning.</p>
-                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
-            </div>
-            <div class="service-card">
-                <h3>Oljemassage 30 min</h3>
-                <div class="service-price">400 kr</div>
-                <p>Lugnande oljemassage för nacke och axlar.</p>
-                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
-            </div>
-            <div class="service-card">
-                <h3>Oljemassage 60 min</h3>
-                <div class="service-price">600 kr</div>
-                <p>Helkroppsbehandling med aromatisk olja.</p>
-                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
-            </div>
-            <div class="service-card">
-                <h3>Fotmassage 60 min</h3>
-                <div class="service-price">700 kr</div>
-                <p>Traditionell fotmassage med reflexpunkter.</p>
-                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
-            </div>
+    <div class="services">
+        <div class="card">
+            <h4>Klassisk Massage</h4>
+            <p>Avslappnande helkroppsbehandling som minskar stress och spänningar.</p>
+            <div class="price">60 min – 650 kr</div>
         </div>
-    </section>
 
-    <section class="reviews">
-        <h2 class="section-title">Recensioner</h2>
-        <div class="divider"></div>
-        <div style="text-align: center; margin-bottom: 40px;">
-            <div style="font-size: 4em; font-weight: 600; color: var(--primary);">3.8</div>
-            <div class="stars">★★★★☆</div>
-            <p>Baserat på 8 recensioner</p>
+        <div class="card">
+            <h4>Djupgående Massage</h4>
+            <p>Behandling för muskelknutor och kroniska spänningar.</p>
+            <div class="price">60 min – 750 kr</div>
         </div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Hög klass"</p>
-                <strong>Albert</strong> · Januari 2024
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Massören var skicklig och kunde ge mig en bra massage."</p>
-                <strong>Chris Kwan</strong> · För 4 månader sedan
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Hade en 30-minuters thaimassage efter maraton. Terapeuten var otroligt professionell."</p>
-                <strong>Omid Naghizadeh</strong> · För 8 månader sedan
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Öppet sent när de flesta salonger börjar vägra service efter 19:30."</p>
-                <strong>Jay</strong> · För ett år sedan
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Mycket trevlig och serviceminded personal. Magnifik service!"</p>
-                <strong>Lars N T</strong> · För 7 månader sedan
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p style="margin: 15px 0;">"Bra massage. Jag kommer att gå tillbaka igen."</p>
-                <strong>Susila 1971</strong> · För ett år sedan
-            </div>
-        </div>
-    </section>
 
-    <section style="padding: 80px 30px; background: white;">
-        <h2 class="section-title">Öppettider</h2>
-        <div class="divider"></div>
-        <div style="max-width: 600px; margin: 40px auto; background: var(--light); padding: 30px;">
-            <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #ddd;">
-                <span><strong>Måndag - Fredag</strong></span>
-                <span style="color: var(--primary); font-weight: 600;">09:00 - 20:00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #ddd;">
-                <span><strong>Lördag</strong></span>
-                <span style="color: var(--primary); font-weight: 600;">10:00 - 19:00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; padding: 15px;">
-                <span><strong>Söndag</strong></span>
-                <span style="color: var(--primary); font-weight: 600;">10:00 - 19:00</span>
-            </div>
+        <div class="card">
+            <h4>Rygg & Nacke</h4>
+            <p>Fokuserad behandling för kontorsrelaterade besvär.</p>
+            <div class="price">30 min – 450 kr</div>
         </div>
-    </section>
-
-    <section class="contact">
-        <h2 class="section-title" style="color: white;">Kontakt</h2>
-        <div class="divider" style="background: var(--secondary);"></div>
-        <div class="contact-grid">
-            <div>
-                <div style="font-size: 3em; margin-bottom: 20px;">📍</div>
-                <h3 style="color: var(--secondary); margin-bottom: 15px;">Adress</h3>
-                <p>Apelbergsgatan 59<br>111 37 Stockholm</p>
-            </div>
-            <div>
-                <div style="font-size: 3em; margin-bottom: 20px;">📞</div>
-                <h3 style="color: var(--secondary); margin-bottom: 15px;">Telefon</h3>
-                <p><a href="tel:0700939359" style="color: white; text-decoration: none;">070-093 93 59</a></p>
-            </div>
-            <div>
-                <div style="font-size: 3em; margin-bottom: 20px;">⏰</div>
-                <h3 style="color: var(--secondary); margin-bottom: 15px;">Drop-in</h3>
-                <p>Ingen bokning behövs<br>Välkommen in!</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.6873958367595!2d18.056842!3d59.336668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5e8c8d8d8d%3A0x0!2sApelbergsgatan+59%2C+Stockholm!5e0!3m2!1sen!2sse!4v1234567890" loading="lazy"></iframe>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Hotorget Massage. Traditionell Thaimassage i Stockholm</p>
-    </footer>
+<section class="contact">
+    <h3>Boka ditt besök idag</h3>
+    <a href="tel:0700000000" class="phone">070-000 00 00</a>
+    <p style="margin-top:20px;">info@hotorgets-massage.se</p>
+</section>
 
-    <script>
-        function openBookingModal() {
-            document.getElementById('bookingModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeBookingModal() {
-            document.getElementById('bookingModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        window.onclick = (e) => { if (e.target.id === 'bookingModal') closeBookingModal(); }
-    </script>
+<div class="map">
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.8252141885793!2d18.05919677687731!3d59.3353539816591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5f65a5b1d7%3A0xf4a6e3d8f9f4d7e1!2sH%C3%B6torget%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+
+<footer>
+© 2026 Hötorgets Massage – Stockholm
+</footer>
+
 </body>
 </html>
+
