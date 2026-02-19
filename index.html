@@ -3,667 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sevgi Stockholm - Exklusiv Nagelvård</title>
-    <meta name="description" content="Sevgi Stockholm - Exklusiv och professionell nagelvård i Stockholm. Boka din tid idag.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Hotorget Massage - Traditionell Thaimassage i Stockholm</title>
+    <meta name="description" content="Hotorget Massage - Professionell thaimassage i Stockholm. Öppet till 20:00 vardagar. Boka din massage idag!">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --primary: #8B6F47;
-            --secondary: #D4AF37;
-            --dark: #2C2C2C;
-            --light: #F8F5F1;
-            --white: #FFFFFF;
+            --primary: #8B4513;
+            --secondary: #D4A574;
+            --dark: #2C1810;
+            --light: #F5F0E8;
             --text: #4A4A4A;
+            --green: #2D5016;
         }
         
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--white);
-        }
+        body { font-family: 'Open Sans', sans-serif; line-height: 1.7; color: var(--text); }
+        h1, h2, h3 { font-family: 'Lora', serif; color: var(--dark); }
         
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--dark);
-            font-weight: 600;
-        }
+        header { background: white; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-bottom: 2px solid var(--secondary); }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+        .logo { font-family: 'Lora', serif; font-size: 1.7em; font-weight: 600; color: var(--primary); }
         
-        /* Header */
-        header {
-            background: var(--white);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
-        }
+        .hero { background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(139, 69, 19, 0.85)); color: white; padding: 180px 30px 120px; text-align: center; margin-top: 75px; }
+        .hero h1 { font-size: 3.5em; margin-bottom: 20px; color: white; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 15px; }
         
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-        }
+        .cta-button { display: inline-block; background: var(--secondary); color: white; padding: 16px 40px; text-decoration: none; font-weight: 600; border: 2px solid var(--secondary); transition: all 0.3s; cursor: pointer; }
+        .cta-button:hover { background: transparent; }
         
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
+        .services { padding: 100px 30px; max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        .service-card { background: var(--light); padding: 40px 30px; text-align: center; }
+        .service-price { font-size: 2em; font-weight: 600; color: var(--primary); margin: 20px 0; }
         
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
+        .reviews { background: var(--light); padding: 100px 30px; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 60px auto 0; }
+        .review-card { background: white; padding: 35px; }
+        .stars { color: #FFB800; font-size: 1.2em; }
         
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.95em;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            text-transform: uppercase;
-        }
+        .section-title { font-size: 2.8em; text-align: center; margin-bottom: 20px; }
+        .divider { width: 80px; height: 3px; background: var(--secondary); margin: 20px auto 40px; }
         
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .contact { background: var(--dark); color: white; padding: 100px 30px; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1200px; margin: 60px auto 0; text-align: center; }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(139, 111, 71, 0.15), rgba(139, 111, 71, 0.15)), 
-                        linear-gradient(to bottom, var(--light) 0%, var(--white) 100%);
-            padding: 180px 40px 120px;
-            text-align: center;
-            margin-top: 80px;
-        }
+        .map-section iframe { width: 100%; height: 450px; border: none; }
+        footer { background: #1a0f08; color: rgba(255,255,255,0.7); text-align: center; padding: 30px; }
         
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+        .modal.active { display: flex; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 50px; max-width: 500px; width: 90%; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 25px; font-size: 2em; background: none; border: none; cursor: pointer; }
         
-        .hero h1 {
-            font-size: 4em;
-            margin-bottom: 25px;
-            color: var(--dark);
-            font-weight: 400;
-            letter-spacing: 2px;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2em;
-            margin-bottom: 50px;
-            color: var(--text);
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 18px 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1em;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: all 0.4s;
-            border: 2px solid var(--primary);
-        }
-        
-        .cta-button:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-        
-        /* Divider */
-        .divider {
-            width: 80px;
-            height: 2px;
-            background: var(--secondary);
-            margin: 0 auto 60px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-            background: var(--white);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .section-title {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: var(--dark);
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.1em;
-            color: var(--text);
-            font-weight: 300;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .service-card {
-            background: var(--light);
-            padding: 50px 40px;
-            text-align: center;
-            transition: all 0.4s;
-            border: 1px solid rgba(139, 111, 71, 0.1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(139, 111, 71, 0.15);
-            border-color: var(--primary);
-        }
-        
-        .service-card h3 {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            color: var(--dark);
-            font-weight: 600;
-        }
-        
-        .service-card p {
-            color: var(--text);
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-        
-        .price {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
-        
-        /* Reviews Section */
-        .reviews {
-            background: var(--light);
-            padding: 100px 40px;
-        }
-        
-        .reviews-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .review-card {
-            background: var(--white);
-            padding: 45px;
-            position: relative;
-            border: 1px solid rgba(139, 111, 71, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .review-card:hover {
-            box-shadow: 0 15px 35px rgba(139, 111, 71, 0.1);
-        }
-        
-        .quote-mark {
-            font-family: 'Playfair Display', serif;
-            font-size: 5em;
-            color: var(--secondary);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 30px;
-            line-height: 1;
-        }
-        
-        .stars {
-            color: var(--secondary);
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .review-text {
-            color: var(--text);
-            font-style: italic;
-            margin-bottom: 30px;
-            line-height: 1.9;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .reviewer {
-            padding-top: 25px;
-            border-top: 1px solid rgba(139, 111, 71, 0.15);
-        }
-        
-        .reviewer h4 {
-            color: var(--dark);
-            margin-bottom: 8px;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-        
-        .review-date {
-            color: #999;
-            font-size: 0.9em;
-            font-weight: 300;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-size: 3em;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-        
-        .about-text p {
-            font-size: 1.05em;
-            color: var(--text);
-            margin-bottom: 25px;
-            line-height: 1.9;
-        }
-        
-        .about-image {
-            background: linear-gradient(135deg, rgba(139, 111, 71, 0.9), rgba(212, 175, 55, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23F8F5F1" width="400" height="300"/></svg>');
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image::before {
-            content: 'Sevgi Stockholm';
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: var(--dark);
-            color: var(--white);
-            padding: 100px 40px;
-        }
-        
-        .contact-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .contact-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .contact-header h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: var(--white);
-            font-weight: 400;
-        }
-        
-        .contact-header p {
-            font-size: 1.1em;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
-            margin-bottom: 80px;
-        }
-        
-        .contact-item {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--secondary);
-        }
-        
-        .contact-item h3 {
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            color: var(--secondary);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .contact-item p {
-            line-height: 1.8;
-            font-weight: 300;
-        }
-        
-        .contact-item a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-item a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Map Section */
-        .map-section {
-            width: 100%;
-            height: 500px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .map-section iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: grayscale(30%) contrast(90%);
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: rgba(255, 255, 255, 0.6);
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        footer p {
-            font-size: 0.95em;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 968px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                height: 400px;
-            }
-            
-            .section-title {
-                font-size: 2.2em;
-            }
-            
-            .services-grid,
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2em; }
+            .services-grid, .reviews-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()">&times;</button>
+            <h2>Boka Din Massage</h2>
+            <p style="margin: 25px 0;">Ring oss eller kom förbi:</p>
+            <p style="font-size: 1.3em; color: var(--primary); margin: 20px 0;"><strong>📞 070-093 93 59</strong></p>
+            <p>Drop-in välkomnas! Vi ser fram emot ditt besök.</p>
+        </div>
+    </div>
+
     <header>
         <nav>
-            <div class="logo">SEVGI STOCKHOLM</div>
-            <ul class="nav-links">
-                <li><a href="#hem">Hem</a></li>
-                <li><a href="#tjanster">Tjänster</a></li>
-                <li><a href="#recensioner">Recensioner</a></li>
-                <li><a href="#om-oss">Om Oss</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
+            <div class="logo">Hotorget Massage</div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hem">
-        <div class="hero-content">
-            <h1>Exklusiv Nagelvård</h1>
-            <p class="hero-subtitle">Professionell behandling med passion och precision</p>
-            <a href="https://www.bokadirekt.se/places/sevgi-stockholm-36365" class="cta-button" target="_blank">
-                Boka Tid
-            </a>
-        </div>
+    <section class="hero">
+        <h1>Hotorget Massage</h1>
+        <p class="hero-subtitle">Traditionell Thaimassage & Avslappning</p>
+        <p style="margin-bottom: 40px;">📍 Apelbergsgatan 59, Stockholm</p>
+        <button class="cta-button" onclick="openBookingModal()">Boka Nu</button>
+        <a href="tel:0700939359" class="cta-button" style="margin-left: 15px; background: transparent; border-color: white; color: white;">070-093 93 59</a>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="tjanster">
-        <div class="section-header">
-            <h2 class="section-title">Våra Tjänster</h2>
-            <div class="divider"></div>
-            <p class="section-subtitle">Skräddarsydd nagelvård anpassad efter dina önskemål</p>
-        </div>
-        
+    <section class="services">
+        <h2 class="section-title">Våra Behandlingar</h2>
+        <div class="divider"></div>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Klassisk Manicure</h3>
-                <p>Professionell hand- och nagelvård med högkvalitativa produkter för perfekt finish</p>
-                <div class="price">från 350 kr</div>
+                <h3>Thaimassage 30 min</h3>
+                <div class="service-price">500 kr</div>
+                <p>Traditionell thaimassage med tryckpunkter och stretching.</p>
+                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
             </div>
-            
             <div class="service-card">
-                <h3>Gellack</h3>
-                <p>Långvarig och hållbar gellack som behåller sin glans i upp till tre veckor</p>
-                <div class="price">från 450 kr</div>
+                <h3>Thaimassage 60 min</h3>
+                <div class="service-price">700 kr</div>
+                <p>Fullständig helkroppsbehandling för djup avslappning.</p>
+                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
             </div>
-            
             <div class="service-card">
-                <h3>Nagelförlängning</h3>
-                <p>Eleganta och naturligt utseende förlängningar med perfekt form och längd</p>
-                <div class="price">från 650 kr</div>
+                <h3>Oljemassage 30 min</h3>
+                <div class="service-price">400 kr</div>
+                <p>Lugnande oljemassage för nacke och axlar.</p>
+                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
             </div>
-            
             <div class="service-card">
-                <h3>Lyxig Pedicure</h3>
-                <p>Komplett fotvård med peeling, massage och nagelvård för mjuka och välvårdade fötter</p>
-                <div class="price">från 400 kr</div>
+                <h3>Oljemassage 60 min</h3>
+                <div class="service-price">600 kr</div>
+                <p>Helkroppsbehandling med aromatisk olja.</p>
+                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
             </div>
-            
             <div class="service-card">
-                <h3>Nail Art</h3>
-                <p>Skräddarsydda designer och unika dekorer för ett personligt uttryck</p>
-                <div class="price">från 100 kr</div>
-            </div>
-            
-            <div class="service-card">
-                <h3>Specialbehandlingar</h3>
-                <p>Stärkande och vårdande behandlingar för optimal nagelhälsa</p>
-                <div class="price">från 250 kr</div>
+                <h3>Fotmassage 60 min</h3>
+                <div class="service-price">700 kr</div>
+                <p>Traditionell fotmassage med reflexpunkter.</p>
+                <button class="cta-button" onclick="openBookingModal()" style="margin-top: 20px;">Boka</button>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews" id="recensioner">
-        <div class="reviews-container">
-            <div class="section-header">
-                <h2 class="section-title">Våra Kunder</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Recensioner från nöjda besökare</p>
+    <section class="reviews">
+        <h2 class="section-title">Recensioner</h2>
+        <div class="divider"></div>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div style="font-size: 4em; font-weight: 600; color: var(--primary);">3.8</div>
+            <div class="stars">★★★★☆</div>
+            <p>Baserat på 8 recensioner</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Hög klass"</p>
+                <strong>Albert</strong> · Januari 2024
             </div>
-            
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="quote-mark">"</div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">
-                        Sevgi är Jätte duktig & professionell, bra kundbemötande, man känner verkligen att man vill komma tillbaka!
-                    </p>
-                    <div class="reviewer">
-                        <h4>Canan Zanyar</h4>
-                        <div class="review-date">För ett år sedan</div>
-                    </div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="quote-mark">"</div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">
-                        Sevgi är oroligt duktig och proffsig på det hon gör. Känner mig trygg och är alltid supernöjd efter varje gång jag varit hos henne! Rekommenderar varmt!
-                    </p>
-                    <div class="reviewer">
-                        <h4>Ava Raufi</h4>
-                        <div class="review-date">För 4 år sedan</div>
-                    </div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="quote-mark">"</div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">
-                        Jätte trevlig nagelsalong samt var snäll och lättsam. Gunilla gjorde ett väldigt bra jobb tack tack.
-                    </p>
-                    <div class="reviewer">
-                        <h4>Johnny Österberg</h4>
-                        <div class="review-date">För 3 år sedan</div>
-                    </div>
-                </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Massören var skicklig och kunde ge mig en bra massage."</p>
+                <strong>Chris Kwan</strong> · För 4 månader sedan
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Hade en 30-minuters thaimassage efter maraton. Terapeuten var otroligt professionell."</p>
+                <strong>Omid Naghizadeh</strong> · För 8 månader sedan
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Öppet sent när de flesta salonger börjar vägra service efter 19:30."</p>
+                <strong>Jay</strong> · För ett år sedan
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Mycket trevlig och serviceminded personal. Magnifik service!"</p>
+                <strong>Lars N T</strong> · För 7 månader sedan
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="margin: 15px 0;">"Bra massage. Jag kommer att gå tillbaka igen."</p>
+                <strong>Susila 1971</strong> · För ett år sedan
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="om-oss">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Om Sevgi Stockholm</h2>
-                <div class="divider" style="margin: 30px 0;"></div>
-                <p>
-                    Välkommen till Sevgi Stockholm - din destination för exklusiv nagelvård i hjärtat av Stockholm. 
-                    Med många års erfarenhet och en passion för perfektion, erbjuder vi professionell behandling 
-                    i en elegant och avslappnande miljö.
-                </p>
-                <p>
-                    Vi arbetar endast med produkter av högsta kvalitet och följer de senaste teknikerna inom nagelvård. 
-                    Varje behandling är skräddarsydd efter dina individuella behov och önskemål, 
-                    för att garantera ett resultat som överträffar förväntningarna.
-                </p>
-                <p>
-                    Hos oss möts expertis med omtanke. Vi värnar om både estetik och hälsa, 
-                    och ser till att varje besök blir en lyxig upplevelse från början till slut.
-                </p>
-                <a href="https://www.bokadirekt.se/places/sevgi-stockholm-36365" class="cta-button" target="_blank" style="margin-top: 20px;">
-                    Boka Din Tid
-                </a>
+    <section style="padding: 80px 30px; background: white;">
+        <h2 class="section-title">Öppettider</h2>
+        <div class="divider"></div>
+        <div style="max-width: 600px; margin: 40px auto; background: var(--light); padding: 30px;">
+            <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #ddd;">
+                <span><strong>Måndag - Fredag</strong></span>
+                <span style="color: var(--primary); font-weight: 600;">09:00 - 20:00</span>
             </div>
-            <div class="about-image"></div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="kontakt">
-        <div class="contact-container">
-            <div class="contact-header">
-                <h2>Kontakt & Besök</h2>
-                <div class="divider" style="background: var(--secondary);"></div>
-                <p>Vi ser fram emot att välkomna dig</p>
+            <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #ddd;">
+                <span><strong>Lördag</strong></span>
+                <span style="color: var(--primary); font-weight: 600;">10:00 - 19:00</span>
             </div>
-            
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>Plats</h3>
-                    <p>Stockholm<br>Sverige</p>
-                </div>
-                
-                <div class="contact-item">
-                    <h3>Telefon</h3>
-                    <p><a href="tel:+46">Kontakta oss</a></p>
-                </div>
-                
-                <div class="contact-item">
-                    <h3>Bokning</h3>
-                    <p><a href="https://www.bokadirekt.se/places/sevgi-stockholm-36365" target="_blank">BokaDirekt.se</a></p>
-                </div>
-                
-                <div class="contact-item">
-                    <h3>Öppettider</h3>
-                    <p>
-                        Måndag - Fredag: 10:00 - 19:00<br>
-                        Lördag: 10:00 - 17:00<br>
-                        Söndag: Stängt
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Google Maps -->
-            <div class="map-section">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32443.937738229894!2d18.049346!3d59.3293235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1sen!2sse!4v1234567890123!5m2!1sen!2sse" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div style="display: flex; justify-content: space-between; padding: 15px;">
+                <span><strong>Söndag</strong></span>
+                <span style="color: var(--primary); font-weight: 600;">10:00 - 19:00</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="contact">
+        <h2 class="section-title" style="color: white;">Kontakt</h2>
+        <div class="divider" style="background: var(--secondary);"></div>
+        <div class="contact-grid">
+            <div>
+                <div style="font-size: 3em; margin-bottom: 20px;">📍</div>
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">Adress</h3>
+                <p>Apelbergsgatan 59<br>111 37 Stockholm</p>
+            </div>
+            <div>
+                <div style="font-size: 3em; margin-bottom: 20px;">📞</div>
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">Telefon</h3>
+                <p><a href="tel:0700939359" style="color: white; text-decoration: none;">070-093 93 59</a></p>
+            </div>
+            <div>
+                <div style="font-size: 3em; margin-bottom: 20px;">⏰</div>
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">Drop-in</h3>
+                <p>Ingen bokning behövs<br>Välkommen in!</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.6873958367595!2d18.056842!3d59.336668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5e8c8d8d8d%3A0x0!2sApelbergsgatan+59%2C+Stockholm!5e0!3m2!1sen!2sse!4v1234567890" loading="lazy"></iframe>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Sevgi Stockholm. Alla rättigheter förbehållna.</p>
-        <p style="margin-top: 15px;">Exklusiv nagelvård i Stockholm</p>
+        <p>&copy; 2024 Hotorget Massage. Traditionell Thaimassage i Stockholm</p>
     </footer>
+
+    <script>
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = (e) => { if (e.target.id === 'bookingModal') closeBookingModal(); }
+    </script>
 </body>
 </html>
