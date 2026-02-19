@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Clinique - Centre Medical Esthétique</title>
+    <meta name="description" content="La Clinique - Medicinsk estetik i Stockholm. Professionella behandlingar med läkare och erfaren personal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a3a3a;
+            --secondary: #c9a961;
+            --accent: #8b7355;
+            --light: #f9f7f4;
+            --white: #ffffff;
+            --text: #3d3d3d;
+            --soft-gray: #e8e4df;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            border-bottom: 1px solid var(--soft-gray);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9em;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 58, 0.85), rgba(26, 58, 58, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f9f7f4" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 200px 40px 140px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5em;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+            letter-spacing: 1.5px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 18px 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            border: 2px solid var(--secondary);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+        
+        /* Divider */
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--secondary);
+            margin: 0 auto 50px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 40px;
+            background: var(--light);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-container h2 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        .about-container p {
+            font-size: 1.15em;
+            line-height: 2;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto 25px;
+            font-weight: 300;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.15em;
+            color: var(--text);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+        }
+        
+        .service-card {
+            background: var(--light);
+            padding: 60px 45px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(26, 58, 58, 0.12);
+            border-color: var(--secondary);
+        }
+        
+        .service-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4em;
+            color: var(--secondary);
+            opacity: 0.3;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .service-card p {
+            color: var(--text);
+            margin-bottom: 30px;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        .service-list {
+            list-style: none;
+            text-align: left;
+            padding-left: 20px;
+        }
+        
+        .service-list li {
+            color: var(--text);
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-weight: 300;
+        }
+        
+        .service-list li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            background: var(--primary);
+            color: var(--white);
+            padding: 120px 40px;
+        }
+        
+        .reviews-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .reviews-container .section-title {
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 70px;
+        }
+        
+        .review-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--secondary);
+        }
+        
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6em;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            line-height: 1;
+        }
+        
+        .stars {
+            color: var(--secondary);
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .review-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+        
+        .reviewer {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .reviewer h4 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        
+        .review-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+        
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 120px 40px;
+            background: var(--light);
+        }
+        
+        .why-us-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 70px;
+        }
+        
+        .why-us-item {
+            text-align: center;
+        }
+        
+        .why-us-icon {
+            font-size: 3em;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+        
+        .why-us-item h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .why-us-item p {
+            color: var(--text);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+            padding: 120px 40px;
+        }
+        
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 70px;
+        }
+        
+        .contact-info h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .contact-item {
+            margin-bottom: 35px;
+        }
+        
+        .contact-item h4 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .contact-item p {
+            color: var(--text);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--light);
+            padding: 50px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            font-size: 0.95em;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--soft-gray);
+            background: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            color: var(--text);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+        
+        .submit-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* Map Section */
+        .map-section {
+            width: 100%;
+            height: 500px;
+        }
+        
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(40%) contrast(90%);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        footer p {
+            font-size: 0.95em;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 58, 58, 0.95);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 600px;
+            padding: 60px;
+            position: relative;
+            animation: slideUp 0.4s;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 300;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: var(--secondary);
+            transform: rotate(90deg);
+        }
+        
+        .modal-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        .modal-content p {
+            color: var(--text);
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            
+            .section-title {
+                font-size: 2.5em;
+            }
+            
+            .services-grid,
+            .reviews-grid,
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 90%;
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()">&times;</button>
+            <h2>Boka Konsultation</h2>
+            <div class="divider" style="margin: 25px 0;"></div>
+            <p>Kontakta oss för att boka en kostnadsfri konsultation. Vi går igenom dina önskemål och föreslår de behandlingar som passar dig bäst.</p>
+            
+            <form class="contact-form" style="padding: 0; background: transparent;">
+                <div class="form-group">
+                    <label for="name">Namn *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-post *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefon *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="treatment">Intresserad av</label>
+                    <select id="treatment" name="treatment">
+                        <option value="">Välj behandling...</option>
+                        <option value="ansiktsbehandlingar">Ansiktsbehandlingar</option>
+                        <option value="injektionsbehandlingar">Injektionsbehandlingar</option>
+                        <option value="laserbehandlingar">Laserbehandlingar</option>
+                        <option value="ogonlocksoperation">Ögonlocksoperation</option>
+                        <option value="kroppsskulptering">Kroppsskulptering</option>
+                        <option value="annat">Annat</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Meddelande</label>
+                    <textarea id="message" name="message" placeholder="Beskriv gärna dina önskemål..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Skicka Förfrågan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">LA <span>CLINIQUE</span></div>
+            <ul class="nav-links">
+                <li><a href="#hem">Hem</a></li>
+                <li><a href="#om-oss">Om Oss</a></li>
+                <li><a href="#behandlingar">Behandlingar</a></li>
+                <li><a href="#recensioner">Recensioner</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hem">
+        <div class="hero-content">
+            <h1>La Clinique</h1>
+            <p class="hero-subtitle">Centre Médical Esthétique</p>
+            <button class="cta-button" onclick="openBookingModal()">Boka Konsultation</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="om-oss">
+        <div class="about-container">
+            <h2>Välkommen till La Clinique</h2>
+            <div class="divider"></div>
+            <p>
+                La Clinique är en medicinsk estetikklinik där vi kombinerar expertis, passion och 
+                de senaste metoderna inom estetisk medicin. Med många års erfarenhet erbjuder vi 
+                ett brett utbud av behandlingar i en trygg och professionell miljö.
+            </p>
+            <p>
+                Vår filosofi bygger på naturliga resultat och individuell omsorg. Vi tror på att 
+                framhäva din naturliga skönhet och hjälpa dig känna dig bekväm i din egen hud. 
+                Varje behandling börjar med en noggrann konsultation där vi lyssnar på dina önskemål 
+                och skapar en skräddarsydd behandlingsplan.
+            </p>
+            <p>
+                Hos oss arbetar legitimerade läkare och erfaren personal som alltid sätter din 
+                säkerhet och välbefinnande i första rummet. Välkommen till oss på La Clinique.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="behandlingar">
+        <div class="section-header">
+            <h2 class="section-title">Våra Behandlingar</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Expertis inom medicinsk estetik</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>Ansiktsbehandlingar</h3>
+                <p>Avancerade ansiktsbehandlingar för en strålande och ungdomlig hy</p>
+                <ul class="service-list">
+                    <li>Microgold-behandling</li>
+                    <li>Microneedling</li>
+                    <li>Kemisk peeling</li>
+                    <li>HydraFacial</li>
+                    <li>PRF-behandling</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Injektionsbehandlingar</h3>
+                <p>Naturliga resultat med fillers och muskelavslappnande behandlingar</p>
+                <ul class="service-list">
+                    <li>Fillersbehandlingar</li>
+                    <li>Läppar & kindben</li>
+                    <li>Rynkreducering</li>
+                    <li>Ansiktskonturer</li>
+                    <li>Hudförbättring</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Laserbehandlingar</h3>
+                <p>Modern laserteknik för optimal hudföryngring</p>
+                <ul class="service-list">
+                    <li>IPL-behandling</li>
+                    <li>Pigmentfläckar</li>
+                    <li>Kärlbildningar</li>
+                    <li>Hudföryngring</li>
+                    <li>Permanent hårborttagning</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>Kirurgiska Ingrepp</h3>
+                <p>Professionella kirurgiska behandlingar med läkare</p>
+                <ul class="service-list">
+                    <li>Ögonlocksoperation</li>
+                    <li>Hudtagsavlägsnande</li>
+                    <li>Födelsemärken</li>
+                    <li>Trådhissning</li>
+                    <li>Fettsugning</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Kroppsskulptering</h3>
+                <p>Formande behandlingar för kroppen</p>
+                <ul class="service-list">
+                    <li>Kryolipolys (CoolSculpting)</li>
+                    <li>Radiofrekvens</li>
+                    <li>Cellulitbehandling</li>
+                    <li>Hudstramning</li>
+                    <li>Konturförbättring</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Konsultationer</h3>
+                <p>Kostnadsfri rådgivning och behandlingsplanering</p>
+                <ul class="service-list">
+                    <li>Personlig hudanalys</li>
+                    <li>Behandlingsplan</li>
+                    <li>Före- och efterbilder</li>
+                    <li>Pris & tidsestimat</li>
+                    <li>Uppföljning ingår</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="recensioner">
+        <div class="reviews-container">
+            <h2 class="section-title">Våra Patienter</h2>
+            <div class="divider" style="background: var(--secondary);"></div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        Tagit bort hud på ögonlock. Trevligt, fräscht, proffsigt med snyggt resultat. Tack - God Jul 🎄
+                    </p>
+                    <div class="reviewer">
+                        <h4>Ann B</h4>
+                        <div class="review-date">December 2020</div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        Mycket bra och tydlig information före och efter behandlingen vilket kändes tryggt. Vad gäller min ögonoperation känner jag mig 10 år yngre och är jättenöjd. Så många som kan se yngre ut med ett enkelt ingrepp. Evigt tacksam! Rekommendes starkt!
+                    </p>
+                    <div class="reviewer">
+                        <h4>Marcus B</h4>
+                        <div class="review-date">December 2020</div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="quote-mark">"</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        Jag gjorde en microgold-behandling hos Sofia. Upplever att min hy blivit jättefin efteråt. En riktig lyxbehandling. Sofia är en stjärna!
+                    </p>
+                    <div class="reviewer">
+                        <h4>Anna P</h4>
+                        <div class="review-date">November 2020</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="why-us-container">
+            <div class="section-header">
+                <h2 class="section-title">Varför Välja La Clinique?</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <div class="why-us-icon">🏥</div>
+                    <h3>Legitimerad Personal</h3>
+                    <p>Erfarna läkare och specialistutbildad personal med gedigen kompetens inom medicinsk estetik</p>
+                </div>
+                
+                <div class="why-us-item">
+                    <div class="why-us-icon">🔬</div>
+                    <h3>Senaste Tekniken</h3>
+                    <p>Vi använder moderna metoder och högkvalitativ utrustning för bästa resultat</p>
+                </div>
+                
+                <div class="why-us-item">
+                    <div class="why-us-icon">✨</div>
+                    <h3>Naturliga Resultat</h3>
+                    <p>Vår filosofi är att framhäva din naturliga skönhet med subtila förbättringar</p>
+                </div>
+                
+                <div class="why-us-item">
+                    <div class="why-us-icon">🤝</div>
+                    <h3>Personlig Omsorg</h3>
+                    <p>Varje behandling är skräddarsydd efter dina unika behov och önskemål</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title">Kontakta Oss</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Vi ser fram emot att höra från dig</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Besök Oss</h3>
+                    
+                    <div class="contact-item">
+                        <h4>Adress</h4>
+                        <p>
+                            Stockholm<br>
+                            Sverige
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Telefon</h4>
+                        <p><a href="tel:+46">Kontakta oss</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>E-post</h4>
+                        <p><a href="mailto:info@laclinique.se">info@laclinique.se</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Öppettider</h4>
+                        <p>
+                            Måndag - Fredag: 10:00 - 18:00<br>
+                            Lördag: 10:00 - 15:00<br>
+                            Söndag: Stängt
+                        </p>
+                    </div>
+                    
+                    <button class="cta-button" onclick="openBookingModal()" style="margin-top: 30px; cursor: pointer; border: 2px solid var(--primary); background: var(--primary);">
+                        Boka Tid
+                    </button>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px; font-size: 1.8em;">Skicka Meddelande</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="contact-name">Namn *</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">E-post *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Telefon</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Meddelande *</label>
+                            <textarea id="contact-message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Skicka</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32443.937738229894!2d18.049346!3d59.3293235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1sen!2sse!4v1234567890123!5m2!1sen!2sse" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 La Clinique - Centre Médical Esthétique. Alla rättigheter förbehållna.</p>
+        <p style="margin-top: 15px;">Medicinsk estetik i Stockholm med legitimerad personal</p>
+    </footer>
+
+    <script>
+        // Booking Modal Functions
+        function openBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookingModal();
+            }
+        });
+        
+        // Form submission (you can customize this)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Tack för ditt meddelande! Vi återkommer så snart som möjligt.');
+                this.reset();
+                closeBookingModal();
+            });
+        });
+    </script>
+</body>
+</html>
