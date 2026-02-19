@@ -15,13 +15,13 @@
 }
 
 body{
-    font-family: 'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
     background:#f4f1ea;
     color:#1c1c1c;
     line-height:1.6;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav{
     display:flex;
     justify-content:space-between;
@@ -34,16 +34,25 @@ nav{
     z-index:100;
 }
 
-nav h1{
-    font-size:1.2rem;
+nav .logo{
     font-weight:700;
     letter-spacing:1px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
 }
 
 nav a{
     text-decoration:none;
     color:#1c1c1c;
     font-weight:500;
+}
+
+nav a:hover{
+    color:#1f3a34;
 }
 
 /* HERO */
@@ -59,19 +68,17 @@ nav a{
     padding:0 10%;
 }
 
-.hero h2{
+.hero h1{
     font-size:clamp(2rem,5vw,3.5rem);
-    font-weight:700;
     margin-bottom:20px;
 }
 
 .hero p{
     max-width:600px;
     margin:0 auto 40px auto;
-    font-weight:300;
 }
 
-.cta{
+.btn{
     background:#1f3a34;
     color:white;
     padding:15px 35px;
@@ -79,9 +86,10 @@ nav a{
     border-radius:50px;
     font-weight:600;
     transition:0.3s;
+    display:inline-block;
 }
 
-.cta:hover{
+.btn:hover{
     background:#162824;
 }
 
@@ -95,7 +103,7 @@ section{
     margin-bottom:60px;
 }
 
-.section-title h3{
+.section-title h2{
     font-size:2rem;
     margin-bottom:10px;
 }
@@ -119,14 +127,21 @@ section{
     transform:translateY(-5px);
 }
 
-.card h4{
-    margin-bottom:15px;
-}
-
 .price{
     margin-top:20px;
     font-weight:600;
     color:#1f3a34;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+    border-radius:20px;
+    padding:60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    max-width:900px;
+    margin:auto;
+    text-align:center;
 }
 
 /* CONTACT */
@@ -135,10 +150,6 @@ section{
     color:white;
     text-align:center;
     padding:120px 8%;
-}
-
-.contact h3{
-    margin-bottom:30px;
 }
 
 .phone{
@@ -178,56 +189,73 @@ footer{
 <body>
 
 <nav>
-    <h1>Hötorgets Massage</h1>
-    <a href="tel:0700000000">Boka: 070-000 00 00</a>
+    <div class="logo">Hötorgets Massage</div>
+    <ul>
+        <li><a href="#about">Om oss</a></li>
+        <li><a href="#services">Behandlingar</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="tel:0731506075">Ring oss</a></li>
+    </ul>
 </nav>
 
 <section class="hero">
     <div>
-        <h2>Professionell Massage i Stockholm</h2>
+        <h1>Professionell Massage i Stockholm</h1>
         <p>Djupgående behandlingar för avspänning, smärtlindring och återhämtning. Centralt vid Hötorget.</p>
-        <a href="tel:0700000000" class="cta">Boka tid</a>
+        <a href="#contact" class="btn">Boka tid</a>
     </div>
 </section>
 
-<section>
+<section id="services">
     <div class="section-title">
-        <h3>Våra Behandlingar</h3>
-        <p>Utvalda behandlingar anpassade efter dina behov</p>
+        <h2>Våra Behandlingar</h2>
+        <p>Anpassade behandlingar efter dina behov</p>
     </div>
 
     <div class="services">
         <div class="card">
-            <h4>Klassisk Massage</h4>
+            <h3>Klassisk Massage</h3>
             <p>Avslappnande helkroppsbehandling som minskar stress och spänningar.</p>
             <div class="price">60 min – 650 kr</div>
         </div>
 
         <div class="card">
-            <h4>Djupgående Massage</h4>
+            <h3>Djupgående Massage</h3>
             <p>Behandling för muskelknutor och kroniska spänningar.</p>
             <div class="price">60 min – 750 kr</div>
         </div>
 
         <div class="card">
-            <h4>Rygg & Nacke</h4>
+            <h3>Rygg & Nacke</h3>
             <p>Fokuserad behandling för kontorsrelaterade besvär.</p>
             <div class="price">30 min – 450 kr</div>
         </div>
     </div>
 </section>
 
-<section class="contact">
-    <h3>Boka ditt besök idag</h3>
-    <a href="tel:0700000000" class="phone">070-000 00 00</a>
+<section id="about">
+    <div class="section-title">
+        <h2>Om oss</h2>
+    </div>
+    <div class="about">
+        <p>
+        Vi är en professionell massagesalong centralt vid Hötorget i Stockholm. 
+        Med flera års erfarenhet erbjuder vi behandlingar med fokus på kvalitet, hygien och resultat.
+        Vår målsättning är att varje kund ska lämna salongen med en känsla av lättnad och återhämtning.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Boka ditt besök idag</h2>
+    <a href="tel:0731506075" class="phone">073-150 60 75</a>
     <p style="margin-top:20px;">info@hotorgets-massage.se</p>
 </section>
 
 <div class="map">
 <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.8252141885793!2d18.05919677687731!3d59.3353539816591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5f65a5b1d7%3A0xf4a6e3d8f9f4d7e1!2sH%C3%B6torget%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade">
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.8252141885793!2d18.05919677687731!3d59.3353539816591!2m3!1f0!2f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5f65a5b1d7%3A0xf4a6e3d8f9f4d7e1!2sH%C3%B6torget%2C%20Stockholm!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
+loading="lazy">
 </iframe>
 </div>
 
